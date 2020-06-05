@@ -6,4 +6,4 @@ const items= [],
 export default{
   items,
   hideCheckedItems
-}
+};
