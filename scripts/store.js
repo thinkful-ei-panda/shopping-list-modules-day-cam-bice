@@ -3,8 +3,8 @@ import item from './item.js';
 const items= [],
   hideCheckedItems = false;
 
-function findById(id) {
-  item = items.find(id);
+function findById(itemId) {
+  const item = items.find( i => i.id === itemId);
   return item;
 }
 
@@ -19,8 +19,10 @@ function addItem(name) {
 }
 
 function findAndToggleChecked(id) {
-  const foundItem = this.findById(id);
+  const foundItem = findById(id);
+  console.log (foundItem.checked);
   foundItem.checked = !foundItem.checked;
+  console.log (foundItem.checked);
 }
 
 function findAndUpdateName(id,newName) {
@@ -38,11 +40,16 @@ function findAndDelete(itemId) {
   this.items = filteredArray;
 }
 
+function toggleCheckedFilter() {
+  this.hideCheckedItems = !this.hideCheckedItems;
+}
+
 export default{
   items,
   hideCheckedItems,
   addItem,
   findAndToggleChecked,
   findAndUpdateName,
-  findAndDelete
+  findAndDelete,
+  toggleCheckedFilter
 };
