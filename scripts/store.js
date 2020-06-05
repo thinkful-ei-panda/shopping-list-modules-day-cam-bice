@@ -1,7 +1,7 @@
 const items= [],
-  hideCheckedItems = false,
+  hideCheckedItems = false;
 
 export default{
   items,
   hideCheckedItems
-}
+};
